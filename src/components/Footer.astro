@@ -1,14 +1,42 @@
+---
+import {
+  FaDev,
+  FaDiscord,
+  FaLinkedin,
+  FaTwitter,
+  FaYoutube,
+} from "react-icons/fa";
+import { socialLinks } from "../utils";
+import LinkIcon from "./LinkIcon.astro";
+
+const { twitter, youtube, devto, discord, linkedin } = socialLinks;
+---
+
 <footer>
-  <span>
-    &copy; {new Date().getFullYear()} Your Blog.
-     - TODO
-  </span>
+  <div class="mb-5 text-xl">Let's stay in touch!</div>
+  <div class="flex justify-center gap-3">
+    <LinkIcon href={twitter}>
+      <FaTwitter />
+    </LinkIcon>
+    <LinkIcon href={youtube}>
+      <FaYoutube />
+    </LinkIcon>
+    <LinkIcon href={devto}>
+      <FaDev />
+    </LinkIcon>
+    <LinkIcon href={discord}>
+      <FaDiscord />
+    </LinkIcon>
+    <LinkIcon href={linkedin}>
+      <FaLinkedin />
+    </LinkIcon>
+  </div>
 </footer>
 
 <style>
   footer {
     color: var(--text-secondary);
-    font-size: .8em;
+    font-size: 0.8em;
     margin: 1em auto;
     max-width: 1400px;
     padding: 1em 2em;
